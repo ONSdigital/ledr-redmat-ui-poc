@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="static/css/view_logs.css">
+      <title>LEDR Reference Data Management</title>
+  </head>
+  <body>
+  <div class="container">
+      <header>
+          <h1>ReDMaT Menu</h1>
+      </header>
+      <nav>
+          <ul>
+            <form>
+                <li><button formaction="/" value=>Exit</button></li>
+             </form>
+          </ul>
+      </nav>
+        <article>
+           <h2>Current Logs:</h2>
+            <div class="container">
+                <table class="datatbl">
+                    <thead>
+                      <tr class="datatbl">
+                          {% for heading in headings %}
+                        <th class="datatbl">{{ heading }}</th>
+                          {% endfor %}
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs %}
+                        <tr class="datatbl">
+                            {% for element in log %}
+                            <td class="datatbl">{{ element }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </article>
+     <footer>LEDR Reference Data Management</footer>
+  </div>
+  </body>
+</html>
