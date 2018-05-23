@@ -37,6 +37,12 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <form action="/logs" method="post">
+                    <input type="checkbox" name="order" value="1">Order By Effective Date</input>
+                    <input type="checkbox" name="filter" value="1">Filter by File Name</input>
+                    <input name="fileName">
+                    <button class="login">Submit</button>
+                </form>
             </div>
     </article>
      <footer>LEDR Reference Data Management</footer>

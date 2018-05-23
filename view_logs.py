@@ -3,8 +3,18 @@ from requests.auth import HTTPDigestAuth
 import json
 
 
-def get_all():
-    url = "http://localhost:8125/log/"
+def get_all(order, filter, fileName):
+    url = "http://localhost:8126/log/"
+
+    if filter:
+        url = url + fileName
+    if order:
+        url = url + "?order=true"
+    else :
+        url = url + "?order=false"
+
+    print(url)
+
     logs = []
     response = requests.get(url, auth=HTTPDigestAuth("C##LEDRRDM: ", "ledrrdm: "), verify=True)  # TODO: remove auth
 
